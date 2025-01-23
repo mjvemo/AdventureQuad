@@ -9,11 +9,13 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import CardActionArea from "@mui/material/CardActionArea";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
@@ -23,10 +25,10 @@ import Link from "@mui/material/Link";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#e91e63", // Color principal de la marca
+      main: "#0F1A20", // e91e63 Color principal de la marca
     },
     secondary: {
-      main: "#9c27b0", // Color secundario de la marca
+      main: "##F42C04", // Color secundario de la marca
     },
   },
 });
@@ -54,7 +56,7 @@ export default function App() {
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {/* Nombre de la marca */}
-            Belleza Radiante
+            Adventure Quads
           </Typography>
           <Button color="inherit">Login</Button> {/* Botón de login */}
         </Toolbar>
@@ -78,7 +80,7 @@ export default function App() {
             gutterBottom
           >
             {/* Título principal */}
-            Descubre tu Belleza Interior
+            Adventure Quads Nosara
           </Typography>
           <Typography
             variant="h5"
@@ -87,8 +89,8 @@ export default function App() {
             paragraph
           >
             {/* Subtítulo */}
-            En Belleza Radiante, te ofrecemos una amplia gama de cosméticos de
-            alta calidad para realzar tu belleza natural.
+            Costa Rican adventure tours & rental. Best quality and prices in
+            Nosara
           </Typography>
           <Box
             sx={{
@@ -96,9 +98,12 @@ export default function App() {
               justifyContent: "center",
             }}
           >
-            <Button variant="contained" sx={{ mt: 3, mb: 2 }}>
+            <Button variant="outlined" sx={{ mt: 3, mb: 2 }}>
               {/* Botón de llamado a la acción */}
               Ver Catálogo
+              <IconButton aria-label="delete">
+                <VisibilityIcon />
+              </IconButton>
             </Button>
           </Box>
         </Container>
@@ -127,28 +132,30 @@ export default function App() {
                   flexDirection: "column",
                 }}
               >
-                <CardMedia
-                  component="img"
-                  image="https://plus.unsplash.com/premium_photo-1679064287018-a47e283f73f5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Reemplazar con imágenes de productos
-                  alt="imagen de producto"
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {/* Nombre del producto */}
-                    Producto {item}
-                  </Typography>
-                  <Typography>
-                    {/* Descripción del producto */}
-                    This is a media card. You can use this section to describe
-                    the content.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">Ver detalles</Button>{" "}
-                  {/* Botón para ver detalles */}
-                  <Button size="small">Agregar al carrito</Button>{" "}
-                  {/* Botón para agregar al carrito */}
-                </CardActions>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    image="https://images.squarespace-cdn.com/content/v1/52897d8be4b0ae3ab6b93f9f/8d6030f3-2681-4c2e-8432-ccdac7bdfccf/2022-pioneer-520-gallery-01-750x750.jpg?format=1500w" // Reemplazar con imágenes de productos
+                    alt="imagen de producto"
+                  />
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {/* Nombre del producto */}
+                      Producto {item}
+                    </Typography>
+                    <Typography>
+                      {/* Descripción del producto */}
+                      This is a media card. You can use this section to describe
+                      the content.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small">Ver detalles</Button>{" "}
+                    {/* Botón para ver detalles */}
+                    <Button size="small">Agregar al carrito</Button>{" "}
+                    {/* Botón para agregar al carrito */}
+                  </CardActions>
+                </CardActionArea>
               </Card>
             </Grid>
           ))}
